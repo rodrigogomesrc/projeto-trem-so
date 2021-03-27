@@ -6,7 +6,9 @@ Trem::Trem(int ID, int x, int y){
     this->ID = ID;
     this->x = x;
     this->y = y;
-    this->velocidade = 100;
+    this->velocidade = 500;
+    this->velocidadeMaxima = 999;
+    this->parado = false;
 }
 
 
@@ -15,7 +17,9 @@ void Trem::run(){
     while(true){
         switch(ID){
         case 1:     //Trem 1
-            if (y == 30 && x < 330)
+            if (parado)
+                break;
+            else if (y == 30 && x < 330)
                 x+=10;
             else if (x == 330 && y < 150)
                 y+=10;
@@ -26,7 +30,9 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 2: //Trem 2
-            if (y == 30 && x < 600)
+            if (parado)
+                break;
+            else if (y == 30 && x < 600)
                 x+=10;
             else if (x == 600 && y < 150)
                 y+=10;
@@ -37,7 +43,9 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 3: //Trem 3
-            if (y == 30 && x < 870)
+            if (parado)
+                break;
+            else if (y == 30 && x < 870)
                 x+=10;
             else if (x == 870 && y < 150)
                 y+=10;
@@ -47,8 +55,10 @@ void Trem::run(){
                 y-=10;
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
-        case 4: //Trem 2
-            if (y == 150 && x < 470)
+        case 4: //Trem 4
+            if (parado)
+                break;
+            else if (y == 150 && x < 470)
                 x+=10;
             else if (x == 470 && y < 270)
                 y+=10;
@@ -58,8 +68,10 @@ void Trem::run(){
                 y-=10;
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
-        case 5: //Trem 3
-            if (y == 150 && x < 740)
+        case 5: //Trem 5
+            if (parado)
+                break;
+            else if (y == 150 && x < 740)
                 x+=10;
             else if (x == 740 && y < 270)
                 y+=10;
@@ -77,7 +89,12 @@ void Trem::run(){
 }
 
 void Trem::setVelocidade(int velocidade){
-    this->velocidade = (100 - velocidade);
+    this->velocidade = (this->velocidadeMaxima - velocidade);
+    if(this->velocidade == this->velocidadeMaxima){
+        this->parado = true;
+    } else {
+        this->parado = false;
+    }
 }
 
 

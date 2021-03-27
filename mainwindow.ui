@@ -83,9 +83,9 @@
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
-          <red>0</red>
-          <green>0</green>
-          <blue>0</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
@@ -213,9 +213,9 @@
        <colorrole role="PlaceholderText">
         <brush brushstyle="NoBrush">
          <color alpha="128">
-          <red>0</red>
-          <green>0</green>
-          <blue>0</blue>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
          </color>
         </brush>
        </colorrole>
@@ -578,13 +578,13 @@
      <number>0</number>
     </property>
     <property name="maximum">
-     <number>99</number>
+     <number>999</number>
     </property>
     <property name="singleStep">
-     <number>49</number>
+     <number>1</number>
     </property>
     <property name="value">
-     <number>50</number>
+     <number>500</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -602,8 +602,11 @@
     <property name="styleSheet">
      <string notr="true">QSlider { background: rgb(239, 41, 41)}</string>
     </property>
+    <property name="maximum">
+     <number>999</number>
+    </property>
     <property name="value">
-     <number>49</number>
+     <number>500</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -621,8 +624,11 @@
     <property name="styleSheet">
      <string notr="true">QSlider {background: rgb(78, 154, 6)}</string>
     </property>
+    <property name="maximum">
+     <number>999</number>
+    </property>
     <property name="value">
-     <number>49</number>
+     <number>500</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -640,8 +646,11 @@
     <property name="styleSheet">
      <string notr="true">QSlider {background: rgb(117, 80, 123)}</string>
     </property>
+    <property name="maximum">
+     <number>999</number>
+    </property>
     <property name="value">
-     <number>49</number>
+     <number>500</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -659,8 +668,11 @@
     <property name="styleSheet">
      <string notr="true">QSlider { background : rgb(193, 125, 17) }</string>
     </property>
+    <property name="maximum">
+     <number>999</number>
+    </property>
     <property name="value">
-     <number>49</number>
+     <number>500</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
