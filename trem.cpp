@@ -9,6 +9,7 @@ Trem::Trem(int ID, int x, int y){
     this->velocidade = 100;
 }
 
+
 //Função a ser executada após executar trem->START
 void Trem::run(){
     while(true){
