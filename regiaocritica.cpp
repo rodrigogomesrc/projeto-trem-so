@@ -1,11 +1,13 @@
 #include "regiaocritica.h"
+#include "semaphore.h"
 
-RegiaoCritica::RegiaoCritica(int x0, int y0, int x1, int y1)
+RegiaoCritica::RegiaoCritica(int x0, int y0, int x1, int y1, sem_t* mutex)
 {
     this->x0 = x0;
     this->y0 = y0;
     this->x1 = x1;
     this->y1 = y1;
+    this->mutex = mutex;
     this->opened = false;
 }
 

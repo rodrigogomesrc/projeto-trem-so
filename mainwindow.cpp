@@ -1,19 +1,23 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "semaphore.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-
-    rA = new RegiaoCritica(330, 30, 330, 150);
-    rB = new RegiaoCritica(600, 30, 600, 150);
-    rC = new RegiaoCritica(80, 150, 199, 150);
-    rD = new RegiaoCritica(222, 150, 329, 150);
-    rE = new RegiaoCritica(352, 150, 469, 150);
-    rF = new RegiaoCritica(492, 150, 599, 150);
-    rG = new RegiaoCritica(470, 150, 470, 270);
+    sem_t s[7];
+    for(int i=0; i<7; i++){
+       sem_init(&s[i], 0, 1);
+    }
+    rA = new RegiaoCritica(330, 30, 330, 150, &s[0]);
+    rB = new RegiaoCritica(600, 30, 600, 150, &s[1]);
+    rC = new RegiaoCritica(80, 150, 199, 150, &s[2]);
+    rD = new RegiaoCritica(222, 150, 329, 150, &s[3]);
+    rE = new RegiaoCritica(352, 150, 469, 150, &s[4]);
+    rF = new RegiaoCritica(492, 150, 599, 150, &s[5]);
+    rG = new RegiaoCritica(470, 150, 470, 270, &s[6]);
 
     regioesCriticas[0] = rA;
     regioesCriticas[1] = rB;

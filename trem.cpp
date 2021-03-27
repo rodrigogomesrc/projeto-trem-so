@@ -98,12 +98,14 @@ void Trem::setVelocidade(int velocidade){
     }
 }
 
+
 bool Trem::canMove(){
 
     std::cout << this->regioesCriticas[0]->getX0() << std::endl;
     if(this->parado == false){
         return false;
     }
+    if(this->x )
     //testar as regiões críticas aqui
     return true;
 }
