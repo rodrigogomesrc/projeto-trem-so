@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "trem.h"
+#include "regiaocritica.h"
 
 namespace Ui {
 class MainWindow;
@@ -44,6 +45,18 @@ private:
     Trem *trem3;
     Trem *trem4;
     Trem *trem5;
+
+    //Cria os objetos das regiões críticas
+    RegiaoCritica *rA;
+    RegiaoCritica *rB;
+    RegiaoCritica *rC;
+    RegiaoCritica *rD;
+    RegiaoCritica *rE;
+    RegiaoCritica *rF;
+    RegiaoCritica *rG;
+
+    RegiaoCritica* regioesCriticas[7];
+
 };
 
 #endif // MAINWINDOW_H

@@ -2,6 +2,7 @@
 #define TREM_H
 
 #include <QThread>
+#include "regiaocritica.h"
 
 /*
  * Classe Trem herda QThread
@@ -13,7 +14,7 @@
 class Trem: public QThread{
  Q_OBJECT
 public:
-    Trem(int,int,int);  //construtor
+    Trem(int,int,int, RegiaoCritica*[7]);  //construtor
     void run();         //função a ser executada pela thread
     void setVelocidade(int);
 
@@ -29,6 +30,8 @@ private:
    int velocidade;  //Velocidade. É o tempo de dormir em milisegundos entre a mudança de posição do trem
    int velocidadeMaxima;
    bool parado;
+   RegiaoCritica** regioesCriticas;
+   bool canMove();
 };
 
 #endif // TREM_H

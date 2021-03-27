@@ -1,23 +1,24 @@
 #include "trem.h"
 #include <QtCore>
+#include <iostream>
 
 //Construtor
-Trem::Trem(int ID, int x, int y){
+Trem::Trem(int ID, int x, int y, RegiaoCritica* regioesCriticas[7]){
     this->ID = ID;
     this->x = x;
     this->y = y;
     this->velocidade = 500;
     this->velocidadeMaxima = 999;
     this->parado = false;
+    this->regioesCriticas = regioesCriticas;
 }
-
 
 //Função a ser executada após executar trem->START
 void Trem::run(){
     while(true){
         switch(ID){
         case 1:     //Trem 1
-            if (parado)
+            if (this->canMove())
                 break;
             else if (y == 30 && x < 330)
                 x+=10;
@@ -30,7 +31,7 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 2: //Trem 2
-            if (parado)
+            if (this->canMove())
                 break;
             else if (y == 30 && x < 600)
                 x+=10;
@@ -43,7 +44,7 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 3: //Trem 3
-            if (parado)
+            if (this->canMove())
                 break;
             else if (y == 30 && x < 870)
                 x+=10;
@@ -56,7 +57,7 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 4: //Trem 4
-            if (parado)
+            if (this->canMove())
                 break;
             else if (y == 150 && x < 470)
                 x+=10;
@@ -69,7 +70,7 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 5: //Trem 5
-            if (parado)
+            if (this->canMove())
                 break;
             else if (y == 150 && x < 740)
                 x+=10;
@@ -95,6 +96,16 @@ void Trem::setVelocidade(int velocidade){
     } else {
         this->parado = false;
     }
+}
+
+bool Trem::canMove(){
+
+    std::cout << this->regioesCriticas[0]->getX0() << std::endl;
+    if(this->parado == false){
+        return false;
+    }
+    //testar as regiões críticas aqui
+    return true;
 }
 
 
