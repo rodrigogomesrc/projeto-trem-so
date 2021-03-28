@@ -18,7 +18,7 @@ void Trem::run(){
     while(true){
         switch(ID){
         case 1:     //Trem 1
-            if (this->canMove())
+            if (!this->canMove())
                 break;
             else if (y == 30 && x < 330)
                 x+=10;
@@ -31,7 +31,7 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 2: //Trem 2
-            if (this->canMove())
+            if (!this->canMove())
                 break;
             else if (y == 30 && x < 600)
                 x+=10;
@@ -44,7 +44,7 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 3: //Trem 3
-            if (this->canMove())
+            if (!this->canMove())
                 break;
             else if (y == 30 && x < 870)
                 x+=10;
@@ -57,7 +57,7 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 4: //Trem 4
-            if (this->canMove())
+            if (!this->canMove())
                 break;
             else if (y == 150 && x < 470)
                 x+=10;
@@ -70,7 +70,7 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 5: //Trem 5
-            if (this->canMove())
+            if (!this->canMove())
                 break;
             else if (y == 150 && x < 740)
                 x+=10;
@@ -101,13 +101,13 @@ void Trem::setVelocidade(int velocidade){
 
 bool Trem::canMove(){
 
-    std::cout << this->regioesCriticas[0]->getX0() << std::endl;
+    //std::cout << this->regioesCriticas[0]->getX0() << std::endl;
     if(this->parado == false){
-        return false;
+        return true;
     }
     if(this->x )
     //testar as regiões críticas aqui
-    return true;
+    return false;
 }
 
 

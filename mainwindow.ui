@@ -678,6 +678,9 @@
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+   <zorder>label_trilho4_6</zorder>
+   <zorder>label_trilho4_5</zorder>
+   <zorder>label_trilho4_4</zorder>
    <zorder>label_trilho1</zorder>
    <zorder>label_trilho2</zorder>
    <zorder>label_trilho3</zorder>
@@ -692,19 +695,16 @@
    <zorder>label_trilho1_3</zorder>
    <zorder>label_trilho4_3</zorder>
    <zorder>label_trilho2_3</zorder>
-   <zorder>label_trem3</zorder>
    <zorder>label_trilho2_4</zorder>
-   <zorder>label_trilho4_4</zorder>
-   <zorder>label_trilho4_5</zorder>
    <zorder>label_trilho2_5</zorder>
-   <zorder>label_trilho4_6</zorder>
-   <zorder>label_trem4</zorder>
    <zorder>label_trem5</zorder>
    <zorder>horizontalSlider</zorder>
    <zorder>horizontalSlider_2</zorder>
    <zorder>horizontalSlider_3</zorder>
    <zorder>horizontalSlider_4</zorder>
    <zorder>horizontalSlider_5</zorder>
+   <zorder>label_trem4</zorder>
+   <zorder>label_trem3</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
