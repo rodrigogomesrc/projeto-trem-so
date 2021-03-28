@@ -102,11 +102,22 @@ void Trem::setVelocidade(int velocidade){
 bool Trem::canMove(){
 
     //std::cout << this->regioesCriticas[0]->getX0() << std::endl;
+    switch (ID) {
+        case 1:
+            if(x == 310 && y == 30){
+                std::cout << "vou trancar" << std::endl;
+                sem_wait(this->regioesCriticas[0]->mutex);}
+            if(x == 310 && y == 150){
+                std::cout << "vou destrancar" << std::endl;
+                sem_post(this->regioesCriticas[0]->mutex);}
+    }
+
+
+
     if(this->parado == false){
         return true;
     }
-    if(this->x )
-    //testar as regiões críticas aqui
+
     return false;
 }
 
