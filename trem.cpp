@@ -134,7 +134,7 @@ bool Trem::canMove(){
                if(x == 490 && y == 150){sem_wait(&this->regioesCriticas[3]->mutex);}
                if(x == 330 && y == 130){sem_post(&this->regioesCriticas[3]->mutex);}
                if(x == 600 && y == 130){sem_wait(&this->regioesCriticas[4]->mutex);}
-               if(x == 450 && y == 150){sem_post(&this->regioesCriticas[5]->mutex);}
+               if(x == 450 && y == 150){sem_post(&this->regioesCriticas[4]->mutex);}
                break;
            case 3:
                if(x == 620 && y == 150){sem_wait(&this->regioesCriticas[1]->mutex);}
@@ -156,10 +156,7 @@ bool Trem::canMove(){
                break;
            default:
                break;
-           }
-
-
-
+    }
 
     if(this->parado == false){
         return true;

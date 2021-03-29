@@ -28,7 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
     regioesCriticas[6] = rG;
 
     //Cria o trem com seu (ID, posição X, posição Y)
-    trem1 = new Trem(1,60,30,regioesCriticas);
+    trem1 = new Trem(1,60,30,regioesCriticas);//
     trem2 = new Trem(2,330,30,regioesCriticas);
     trem3 = new Trem(3,600,30,regioesCriticas);
     trem4 = new Trem(4,200,150,regioesCriticas);
