@@ -20,7 +20,8 @@ void Trem::run(){
         switch(ID){
         case 1:     //Trem 1
             this->canMove();
-
+            if(this->parado)
+                break;
             if (y == 30 && x < 330)
                 x+=10;
             else if (x == 330 && y < 150)
@@ -32,6 +33,8 @@ void Trem::run(){
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
         case 2: //Trem 2
+            if(this->parado)
+                break;
             this->canMove();
             if (y == 30 && x < 600)
                 x+=10;
@@ -43,7 +46,10 @@ void Trem::run(){
                 y-=10;
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
+
         case 3: //Trem 3
+            if(this->parado)
+                break;
             this->canMove();
             if (y == 30 && x < 870)
                 x+=10;
@@ -55,7 +61,10 @@ void Trem::run(){
                 y-=10;
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
+
         case 4: //Trem 4
+            if(this->parado)
+                break;
             this->canMove();
             if (y == 150 && x < 470)
                 x+=10;
@@ -67,7 +76,10 @@ void Trem::run(){
                 y-=10;
             emit updateGUI(ID, x,y);    //Emite um sinal
             break;
+
         case 5: //Trem 5
+            if(this->parado)
+                break;
             this->canMove();
             if (y == 150 && x < 740)
                 x+=10;
@@ -150,13 +162,6 @@ bool Trem::canMove(){
                 break;
 
            }
-
-
-    if(this->parado == false){
-        return true;
-    }
-
-    return false;
 }
 
 
