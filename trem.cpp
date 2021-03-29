@@ -101,24 +101,52 @@ bool Trem::canMove(){
 
     switch (ID) {
            case 1:
-               if(x == 310 && y == 30){sem_wait(&this->regioesCriticas[0]->mutex);}
-               if(x == 180 && y == 150){sem_post(&this->regioesCriticas[0]->mutex);}
+               if(x == 310 && y == 30){
+                   sem_wait(&this->regioesCriticas[0]->mutex);
+                   sem_wait(&this->regioesCriticas[2]->mutex);}
+               if(x == 180 && y == 150){
+                   sem_post(&this->regioesCriticas[0]->mutex);
+                   sem_post(&this->regioesCriticas[2]->mutex);}
                break;
             case 2:
-               if(x == 580 && y == 30){sem_wait(&this->regioesCriticas[0]->mutex);}
-               if(x == 350 && y == 30){sem_post(&this->regioesCriticas[0]->mutex);}
+               if(x == 580 && y == 30){
+                   sem_wait(&this->regioesCriticas[0]->mutex);
+                   sem_wait(&this->regioesCriticas[1]->mutex);
+                   sem_wait(&this->regioesCriticas[3]->mutex);
+                   sem_wait(&this->regioesCriticas[4]->mutex);}
+               if(x == 350 && y == 30){
+                   sem_post(&this->regioesCriticas[0]->mutex);
+                   sem_post(&this->regioesCriticas[1]->mutex);
+                   sem_post(&this->regioesCriticas[3]->mutex);
+                   sem_post(&this->regioesCriticas[4]->mutex);}
                break;
             case 3:
-                if(x == 760 && y == 150){sem_wait(&this->regioesCriticas[0]->mutex);}
-                if(x == 620 && y == 30){sem_post(&this->regioesCriticas[0]->mutex);}
+                if(x == 760 && y == 150){
+                    sem_wait(&this->regioesCriticas[1]->mutex);
+                    sem_wait(&this->regioesCriticas[5]->mutex);}
+                if(x == 620 && y == 30){
+                    sem_post(&this->regioesCriticas[1]->mutex);
+                    sem_post(&this->regioesCriticas[5]->mutex);}
                 break;
             case 4:
-                if(x == 200 && y == 170){sem_wait(&this->regioesCriticas[0]->mutex);}
-                if(x == 450 && y == 270){sem_post(&this->regioesCriticas[0]->mutex);}
+                if(x == 200 && y == 170){
+                    sem_wait(&this->regioesCriticas[2]->mutex);
+                    sem_wait(&this->regioesCriticas[3]->mutex);
+                    sem_wait(&this->regioesCriticas[6]->mutex);}
+                if(x == 450 && y == 270){
+                    sem_post(&this->regioesCriticas[2]->mutex);
+                    sem_post(&this->regioesCriticas[3]->mutex);
+                    sem_post(&this->regioesCriticas[6]->mutex);}
                 break;
             case 5:
-                if(x == 490 && y == 270){sem_wait(&this->regioesCriticas[0]->mutex);}
-                if(x == 740 && y == 170){sem_post(&this->regioesCriticas[0]->mutex);}
+                if(x == 490 && y == 270){
+                    sem_wait(&this->regioesCriticas[4]->mutex);
+                    sem_wait(&this->regioesCriticas[5]->mutex);
+                    sem_wait(&this->regioesCriticas[6]->mutex);}
+                if(x == 740 && y == 170){
+                    sem_post(&this->regioesCriticas[4]->mutex);
+                    sem_post(&this->regioesCriticas[5]->mutex);
+                    sem_post(&this->regioesCriticas[6]->mutex);}
                 break;
 
            }
