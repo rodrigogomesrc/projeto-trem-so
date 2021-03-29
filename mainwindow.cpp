@@ -7,10 +7,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    //sem_t s[7];
-   // //for(int i=0; i<7; i++){
-     //  sem_init(&s[i], 0, 1);
-    //}
+
     rA = new RegiaoCritica(330, 30, 330, 150);
     rB = new RegiaoCritica(600, 30, 600, 150);
     rC = new RegiaoCritica(80, 150, 199, 150);
@@ -29,10 +26,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //Cria o trem com seu (ID, posição X, posição Y)
     trem1 = new Trem(1,60,30,regioesCriticas);//
-    trem2 = new Trem(2,330,30,regioesCriticas);
-    trem3 = new Trem(3,600,30,regioesCriticas);
-    trem4 = new Trem(4,200,150,regioesCriticas);
-    trem5 = new Trem(5,470,150,regioesCriticas);
+    trem2 = new Trem(2,370,30,regioesCriticas);
+    trem3 = new Trem(3,650,30,regioesCriticas);
+    trem4 = new Trem(4,200,190,regioesCriticas);
+    trem5 = new Trem(5,740,190,regioesCriticas);
 
     /*
      * Conecta o sinal UPDATEGUI à função UPDATEINTERFACE.

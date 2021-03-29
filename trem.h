@@ -33,7 +33,6 @@ private:
    bool parado;
    RegiaoCritica** regioesCriticas;
    bool canMove();
-   void unlock();
 };
 
 #endif // TREM_H
