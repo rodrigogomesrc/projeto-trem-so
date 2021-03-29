@@ -1,7 +1,7 @@
 #include "regiaocritica.h"
 #include "semaphore.h"
 
-RegiaoCritica::RegiaoCritica(int x0, int y0, int x1, int y1, sem_t* mutex)
+RegiaoCritica::RegiaoCritica(int x0, int y0, int x1, int y1)
 {
     this->x0 = x0;
     this->y0 = y0;
@@ -9,6 +9,7 @@ RegiaoCritica::RegiaoCritica(int x0, int y0, int x1, int y1, sem_t* mutex)
     this->y1 = y1;
     this->mutex = mutex;
     this->opened = false;
+    sem_init(&this->mutex, 0, 1);
 }
 
 bool RegiaoCritica::isOpened(){

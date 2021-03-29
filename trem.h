@@ -17,6 +17,7 @@ public:
     Trem(int,int,int, RegiaoCritica*[7]);  //construtor
     void run();         //função a ser executada pela thread
     void setVelocidade(int);
+    sem_t** s;
 
 
 //Cria um sinal
@@ -32,6 +33,7 @@ private:
    bool parado;
    RegiaoCritica** regioesCriticas;
    bool canMove();
+   void unlock();
 };
 
 #endif // TREM_H

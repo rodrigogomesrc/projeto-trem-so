@@ -5,7 +5,7 @@
 class RegiaoCritica
 {
 public:
-    RegiaoCritica(int, int, int, int, sem_t *);
+    RegiaoCritica(int, int, int, int);
     bool isOpened();
     void open();
     void close();
@@ -13,7 +13,7 @@ public:
     int getX1();
     int getY0();
     int getY1();
-    sem_t* mutex;
+    sem_t mutex;
 
 private:
     int x0;
