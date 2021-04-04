@@ -10,10 +10,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     rA = new RegiaoCritica(330, 30, 330, 150);
     rB = new RegiaoCritica(600, 30, 600, 150);
-    rC = new RegiaoCritica(80, 150, 199, 150);
-    rD = new RegiaoCritica(222, 150, 329, 150);
-    rE = new RegiaoCritica(352, 150, 469, 150);
-    rF = new RegiaoCritica(492, 150, 599, 150);
+    rC = new RegiaoCritica(200, 150, 330, 150);
+    rD = new RegiaoCritica(330, 150, 470, 150);
+    rE = new RegiaoCritica(470, 150, 600, 150);
+    rF = new RegiaoCritica(600, 150, 740, 150);
     rG = new RegiaoCritica(470, 150, 470, 270);
 
     regioesCriticas[0] = rA;
